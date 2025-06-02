@@ -106845,8 +106845,9 @@ p=n==null?"":n
 j=k
 m=j==null?null:B.c.fT(A.aYR(j))
 o=m==null?"":m
+j=A.j(h)
 new A.bn(Date.now(),0,!1).pE()
-q=new A.iR(p,"https://corsproxy.io/?url=https://logiasoldeamerica37.com/wp-content/uploads/2025/03/image.png",h,"Unknown")
+q=new A.iR(p,"https://corsproxy.io/?url=https://logiasoldeamerica37.com/wp-content/uploads/2025/03/image.png","https://corsproxy.io/?url="+j,"Unknown")
 s=1
 break
 case 1:return A.u(q,r)}})
