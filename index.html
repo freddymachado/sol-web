@@ -33,7 +33,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "265112992";
+    const serviceWorkerVersion = "1160784266";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -57,30 +57,6 @@
       });
     });
   </script>
-  <script>
-  let deferredPrompt;
-  const installBtn = document.getElementById('installPwaBtn');
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-    // Show the install button
-    installBtn.style.display = 'block';
-  });
-
-  installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      // Optionally hide the button after install
-      if (outcome === 'accepted') {
-        installBtn.style.display = 'none';
-      }
-      deferredPrompt = null;
-    }
-  });
-</script>
 </body>
 </html>
