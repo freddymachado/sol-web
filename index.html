@@ -30,11 +30,31 @@
 
   <title>Gran Logia Sol de América Nº 37</title>
   <link rel="manifest" href="manifest.json">
+<script>
+  // … earlier code …
+  var serviceWorkerVersion = "3889837401";
+  var scriptLoaded = false;
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "919132160";
-  </script>
+  function loadMainDartJs() {
+    if (scriptLoaded) return;
+    scriptLoaded = true;
+    var scriptTag = document.createElement('script');
+    scriptTag.src = 'main.dart.js';
+    document.body.append(scriptTag);
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+      navigator.serviceWorker
+        .register(serviceWorkerUrl)
+        .then(/* … */);
+      // … your fallback timer, etc. …
+    });
+  } else {
+    loadMainDartJs();
+  }
+</script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
