@@ -20,44 +20,42 @@
   <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Gran Logia Sol de América Nº 37">
-  <link rel="apple-touch-icon" href="favicon2.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/img" href="favicon2.png"/>
+  <link rel="icon" type="image/img" href="favicon.png"/>
 
   <title>Gran Logia Sol de América Nº 37</title>
   <link rel="manifest" href="manifest.json">
-<script>
-  // … earlier code …
-  var serviceWorkerVersion = "3889837401";
-  var scriptLoaded = false;
 
-  function loadMainDartJs() {
-    if (scriptLoaded) return;
-    scriptLoaded = true;
-    var scriptTag = document.createElement('script');
-    scriptTag.src = 'main.dart.js';
-    document.body.append(scriptTag);
-  }
-
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-      navigator.serviceWorker
-        .register(serviceWorkerUrl)
-        .then(/* … */);
-      // … your fallback timer, etc. …
-    });
-  } else {
-    loadMainDartJs();
-  }
-</script>
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "322875510";
+  </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <button id="installPwaBtn" style="display:none;position:fixed;bottom:24px;right:24px;z-index:9999;">
+  Instalar app
+</button>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
