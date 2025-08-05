@@ -2,7 +2,7 @@
     "name": "Gran Logia Sol de América Nº 37",
     "short_name": "GLSA 37",
     "start_url": ".",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "Portal oficial de la Logia Sol de América Nº 37",
