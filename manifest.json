@@ -1,6 +1,6 @@
 {
     "name": "Gran Logia Sol de América Nº 37",
-    "short_name": "GLSA 37",
+    "short_name": "SDA37",
     "start_url": ".",
     "display": "fullscreen",
     "background_color": "#0175C2",
@@ -11,8 +11,13 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/Icon-192.png",
+            "src": "icons/splash_round.png",
             "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/splash_foreground.png",
+            "sizes": "432x432",
             "type": "image/png"
         },
         {

@@ -119632,7 +119632,7 @@ s=i.ay.length
 if(s===0)s=1
 r=J.GO(s,t.l7)
 for(q=t.p,p=0;p<s;++p){o=i.ay
-o=o.length!==0&&B.c.cL(o[p].c,"http")?A.Gq(o[p].c,B.ct,1/0,j,1/0):A.lL("lib/images/autoridades.jpg",B.ct,1/0,1/0)
+o=o.length!==0&&B.c.cL(o[p].c,"http")&&p>6?A.Gq(o[p].c,B.ct,1/0,j,1/0):A.lL("lib/images/autoridades"+p+".jpg",B.ct,1/0,1/0)
 n=A.b4(j,j,B.o,j,j,B.tq,j,j,j,j,j,j,j,j)
 m=A.M(a)
 l=new A.aF(40,40)
